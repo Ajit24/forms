@@ -20,8 +20,7 @@ import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import GoogleAutoCompleteAddress from './GoogleAutoCompleteAddress';
-
-
+import SmartSearch from './SmartSearch';
 
 
 const style = {
@@ -50,6 +49,8 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
   const [apartment, setApartment] = useState("")
   const [open, setOpen] = React.useState(false);
   const [locationValue, setLocationValue] = useState(true)
+  const [error,setError]=useState(false)
+
 
   console.log("page1 working")
 
@@ -141,8 +142,8 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
     handleBack()
 
   }
-  const handleConfirm = () => {
-
+  const handleConfirm = (e) => {
+    e.preventDefault();
     handleNext()
     const data = {
       name,
@@ -155,6 +156,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
       apartment
     }
     // handleNext();
+ 
     console.log("page1-data", data)
 
     localStorage.setItem("page1-data", JSON.stringify(data));
@@ -206,6 +208,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                       </Select>
 
                     </FormControl>
+                  
                   </div>
                   <br />
                   <div style={{ marginBottom: '15px', border: '1px solid grey' }}>
@@ -245,8 +248,9 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
               {
                 locationValue ? <TextField
                   id="location"
-                  label="curr location"
+                  label=""
                   fullWidth
+                  variant='outlined'
 
                 /> :
 
@@ -283,17 +287,18 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
             </div>
             <br />
             <div>
+            {/* {city ? "" : alert("please select city")} */}
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
-                /> : <TextField label="search" id="fullWidth" fullWidth
-                  onChange={(e) => setApartment(e.target.value)}
-                />
-
-
+                /> :
+                <SmartSearch></SmartSearch>
+                // <TextField label="search" id="fullWidth" fullWidth
+                //   onChange={(e) => setApartment(e.target.value)}
+                // />
               }
 
-
+              
             </div>
             <br />
             <div className='proceed-btn'>
