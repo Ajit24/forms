@@ -4,6 +4,7 @@ var data = require("../data.json");
 
 
 
+
 const SmartSearch = () => {
     
 
@@ -42,9 +43,10 @@ const SmartSearch = () => {
                 fullWidth
                 value={value} 
                 onChange={onChange}
-    
+            
         />
          <div className="dropdown">
+        
           {data
             .filter((item) => {
               const searchTerm = value.toLowerCase();

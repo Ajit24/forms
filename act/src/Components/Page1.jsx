@@ -287,7 +287,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
             </div>
             <br />
             <div>
-            {/* {city ? "" : alert("please select city")} */}
+            {city ? "" : alert("please select city")}
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
