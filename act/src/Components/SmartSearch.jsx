@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import TextField from '@mui/material/TextField';
 var data = require("../data.json");
+var data2 = require("../db.json");
 
 
 
@@ -20,6 +21,10 @@ const SmartSearch = () => {
     // ]
     
     const [value, setValue] = useState("");
+    const stateName  = JSON.parse(localStorage.getItem("statesName")
+    
+    )
+    console.log("selected-city",stateName)
 
   const onChange = (event) => {
     setValue(event.target.value);

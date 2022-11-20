@@ -193,6 +193,8 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                       <InputLabel id="demo-multiple-name-label"> select the city you want to shift </InputLabel>
                       <Select
                         onChange={(e) => {
+                          localStorage.setItem("statesName",JSON.stringify(e.target.value))
+
                           const selectedCity = e.target.value;
                           setCity(selectedCity);
                         }}
@@ -287,7 +289,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
             </div>
             <br />
             <div>
-            {city ? "" : alert("please select city")}
+            {/* {city ? "" : alert("please select city")} */}
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
