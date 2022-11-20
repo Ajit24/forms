@@ -45,8 +45,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
   const [apartment, setApartment] = useState("")
   const [open, setOpen] = React.useState(false);
   const [locationValue, setLocationValue] = useState(true)
-  const [error, setError] = useState(false)
-  console.log("page1 working")
+  
   const handleRadioInput = (e) => {
     setRadio(e.target.value);
   }
