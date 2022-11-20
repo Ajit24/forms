@@ -112,15 +112,15 @@ function GoogleAutoCompleteAddress() {
             <div>
                 <div className="search">
                     <span></span>
-                    <input ref={searchInput} type="text" placeholder="Search location...." style={{width:'320px', height:'45px'}} />
-                    {/* <TextField
-                        id="search-bar"
+                    {/* <input ref={searchInput} type="text" placeholder="Search location...." style={{width:'320px', height:'45px'}} /> */}
+                    <TextField
+                        id=""
                         label="Enter city name"
                         variant="outlined"
-                        placeholder="Search..."
+                        placeholder="Search location...."
                         fullWidth
-                        ref={searchInput}
-                    /> */}
+                        inputRef={searchInput}
+                    />
                     {/* <button onClick={findMyLocation}>use Cuurent locatiponn</button> */}
                 </div>
                 {/* <div className="address">

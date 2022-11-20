@@ -20,10 +20,7 @@ import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import GoogleAutoCompleteAddress from './GoogleAutoCompleteAddress';
-
-
-
-
+import SmartSearch from './SmartSearch';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -37,9 +34,7 @@ const style = {
   height: '30%',
   p: 18,
 };
-
 const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
-
   const [name, setName] = useState("");
   const [accNumber, setAccNumber] = useState('')
   const [currentAddress, setCurrentAddress] = useState("")
@@ -50,56 +45,55 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
   const [apartment, setApartment] = useState("")
   const [open, setOpen] = React.useState(false);
   const [locationValue, setLocationValue] = useState(true)
-
+  const [error, setError] = useState(false)
   console.log("page1 working")
-
   const handleRadioInput = (e) => {
     setRadio(e.target.value);
   }
-
   let data = JSON.parse(localStorage.getItem("page1-data")) || [];
   //let pincode = JSON.parse(localStorage.getItem("pincode")) || [];
   let shifting = JSON.parse(localStorage.getItem("text")) || [];
+  const [monkey, setMonkey] = useState(true)
 
+  React.useEffect(()=>{
+
+    setMonkey(false)
+
+
+  },[city])
   console.log("locationValue", locationValue)
-
   const handleaddress = (e) => {
     setLocationValue(false)
-
     let text = document.getElementById("location");
     text.value = "";
   }
-  const [monkey, setMonkey] = useState(true)
   const radioChange1 = () => {
-    setMonkey(false)
+
+    !city ? alert("pls slect city") : setMonkey(false)
+
   }
+
+  
   const radioChange2 = () => {
     setMonkey(true)
   }
   const handleLocation = (e) => {
-
     // setLocation(e.target.value);
     // axios.get("https://ipapi.co/json?token=45420d190496ea").then((response)=>{
     //   let city=response.data.city;
     //   let region =response.data.region;
     //   let pincode=response.data.postal;
     //   let country_name=response.data.country_name
-
     //   localStorage.setItem("pincode", JSON.stringify(pincode));
     //   localStorage.setItem("text", JSON.stringify(region));
-
     //    let text=document.getElementById("location");
     //   text.value=city+","+region+","+pincode+","+country_name
-
     // })
-
-
     const sucess = (pos) => {
       setLocationValue(true)
       console.log(pos);
       const lat = pos.coords.latitude;
       const lon = pos.coords.longitude;
-
       const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude${lat}=&longitude=${lon}&localityLanguage=en`;
       fetch(geoApiUrl)
         .then((res) => res.json())
@@ -114,35 +108,28 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
           text.value =
             city + "," + mandal + "," + state + "," + country;
           let val = document.getElementById("location").value;
-
-
           console.log("location-value", val);
           // localStorage.setItem("pincode", JSON.stringify(pincode));
           localStorage.setItem("city", JSON.stringify(city))
           localStorage.setItem("text", JSON.stringify(val));
         });
     };
-
     const error = () => {
       console.log("unable to fetch the location");
     };
     navigator.geolocation.getCurrentPosition(sucess, error);
   };
-
   const handleProceed = () => {
     setOpen(true);
     // console.log("page1", data);
   }
-
   const handleClose = () => setOpen(false);
-
   const handleBackkk = () => {
     setOpen(false)
     handleBack()
-
   }
-  const handleConfirm = () => {
-
+  const handleConfirm = (e) => {
+    e.preventDefault();
     handleNext()
     const data = {
       name,
@@ -156,25 +143,19 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
     }
     // handleNext();
     console.log("page1-data", data)
-
     localStorage.setItem("page1-data", JSON.stringify(data));
   }
-
-
   return (
     <>
       <div style={{ border: '1px solid black', borderRadius: '20px', textAlign: 'center', fontFamily: 'sans-serif', fontWeight: '500px', background: 'white' }}>
         <h2>Enter details for a quick feasibility</h2>
-
         <div className='page1-main' style={{ border: '1px solid green', backgroundColor: 'whitesmoke', borderRadius: '20px', display: 'flex', width: '90%', margin: 'auto', padding: '20px 20px 10px 10px', }}>
-
           <div>
             <Box
               sx={{
                 width: 800,
                 maxWidth: '100%',
                 m: '2%',
-
               }}
             >
               <div style={{ display: 'flex', border: '', width: '475px', marginLeft: "50px" }} className='right-div'>
@@ -185,12 +166,12 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                     <TextField fullWidth label="Acc No." id="fullWidth" onChange={(e) => setAccNumber(e.target.value)} /> </div>
                   <div style={{ marginBottom: '15px' }}>
                     <TextField fullWidth label="Current Address" id="fullWidth" onChange={(e) => setCurrentAddress(e.target.value)} /> </div>
-
                   <div style={{ marginBottom: 'auto' }}>
                     <FormControl sx={{ m: .3, width: 470 }}>
                       <InputLabel id="demo-multiple-name-label"> select the city you want to shift </InputLabel>
                       <Select
                         onChange={(e) => {
+                          localStorage.setItem("statesName", JSON.stringify(e.target.value))
                           const selectedCity = e.target.value;
                           setCity(selectedCity);
                         }}
@@ -202,16 +183,13 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                         <MenuItem value="BANGALORE">BANGALORE</MenuItem>
                         <MenuItem value="NELLORE">NELLORE</MenuItem>
                         <MenuItem value="COIMBATORE">COIMBATORE</MenuItem>
-
                       </Select>
-
                     </FormControl>
                   </div>
                   <br />
                   <div style={{ marginBottom: '15px', border: '1px solid grey' }}>
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                       <DatePicker
-
                         label="choose a date"
                         value={date}
                         onChange={(e) => {
@@ -221,35 +199,28 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                       />
                     </LocalizationProvider>
                   </div>
-
                 </div>
               </div>
             </Box>
           </div>
           <div style={{ border: '', width: '475px', marginLeft: "-200px", marginTop: "20px" }} className='right-div'>
-
             <RadioGroup
-
               row
               aria-labelledby="demo-row-radio-buttons-group-label"
               name="row-radio-buttons-group"
             >
               <FormControlLabel id="current-location" value=" current location" onChange={handleLocation} control={<Radio />} label="use current location" fullWidth />
-
               <FormControlLabel id="enter-address" value="enter address" onChange={handleaddress} control={<Radio />} label="enter Address" />
-
             </RadioGroup>
             <br />
-
             <div style={{ marginBottom: '15px', }}>
               {
                 locationValue ? <TextField
                   id="location"
-                  label="curr location"
+                  label=""
                   fullWidth
-
+                  variant='outlined'
                 /> :
-
                   //         <TextField 
                   //         id="search-bar"
                   //         label="Enter a city name"
@@ -257,15 +228,10 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                   //         placeholder="Search..."
                   //         fullWidth
                   //  />
-
                   <GoogleAutoCompleteAddress></GoogleAutoCompleteAddress>
               }
-
-
             </div>
-
             <div style={{ display: 'flex' }}>
-
               <div style={{ display: 'flex', marginRight: '25px', gap: '20px' }}>  <p>Multi-Storey Building (4 or more floors)
               </p>
                 <RadioGroup
@@ -276,24 +242,21 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                   name="row-radio-buttons-group"
                 >
                   <FormControlLabel value="Yes" control={<Radio />} onChange={radioChange1} label="yes" />
-
                   <FormControlLabel value="No" control={<Radio />} onChange={radioChange2} label="No" />
-
                 </RadioGroup> </div>
             </div>
             <br />
             <div>
+              {/* {city ? "" : alert("please select city")} */}
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
-                /> : <TextField label="search" id="fullWidth" fullWidth
-                  onChange={(e) => setApartment(e.target.value)}
-                />
-
-
+                /> :
+                  <SmartSearch handleSeacrYesNo={radioChange1}></SmartSearch>
+                // <TextField label="search" id="fullWidth" fullWidth
+                //   onChange={(e) => setApartment(e.target.value)}
+                // />
               }
-
-
             </div>
             <br />
             <div className='proceed-btn'>
@@ -301,16 +264,12 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                 PROCEED
               </Button>
             </div>
-
           </div>
-
         </div>
-
       </div>
       <div>
         <Footer />
       </div>
-
       <div className='modal'>
         <Modal
           open={open}
@@ -318,33 +277,25 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-
           <Box sx={style}>
             <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
               <h5>Please confirm your address for <br />
                 Fibrenet installation.</h5> <hr />
             </Typography>
-
             <Typography>
               <h5>city               : {city}</h5>
               <h5>building Name/D:No: {apartment} </h5>
               <h5>shifting address  :{shifting}</h5>
               <h5>pincode           :{ }</h5>
-
             </Typography>
-
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
               <button onClick={handleBackkk} style={{ backgroundColor: 'red', color: 'rgba(255,255,255,1)', width: '150px', height: '35px', fontWeight: '500px', fontSize: '15px', fontFamily: 'sans-serif', borderRadius: '10px' }}>CHNAGE</button>
               <button onClick={handleConfirm} style={{ backgroundColor: 'red', color: 'rgba(255,255,255,1)', width: '150px', height: '35px', fontWeight: '500px', fontSize: '15px', fontFamily: 'sans-serif', borderRadius: '10px' }}>CONFIRM</button>
             </div>
           </Box>
-
         </Modal>
       </div>
     </>
-
-
   )
 }
-
 export default Page1;
