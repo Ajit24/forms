@@ -7,11 +7,15 @@ var data2 = require("../db.json");
 
 
 const SmartSearch = () => {
+<<<<<<< HEAD
   const [searITemss,setSearchItems] = useState([{full_name:""}])
   // const [searITemss,setSearchItems] = useState([{full_name:""}])
   const stateName  = JSON.parse(localStorage.getItem("statesName"))
 
   console.log('data2[stateName]', data2[stateName]);
+=======
+    
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
 
     // const people = [
     //     "bob",
@@ -25,7 +29,13 @@ const SmartSearch = () => {
     // ]
     
     const [value, setValue] = useState("");
+<<<<<<< HEAD
     
+=======
+    const stateName  = JSON.parse(localStorage.getItem("statesName")
+    
+    )
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
     console.log("selected-city",stateName)
 
   const onChange = (event) => {
@@ -54,7 +64,12 @@ const SmartSearch = () => {
         />
          <div className="dropdown">
         
+<<<<<<< HEAD
           {data2[stateName]?.filter((item) => {
+=======
+          {data
+            .filter((item) => {
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
               const searchTerm = value.toLowerCase();
               const fullName = item.full_name.toLowerCase();
 

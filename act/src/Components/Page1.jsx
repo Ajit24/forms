@@ -21,6 +21,11 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import GoogleAutoCompleteAddress from './GoogleAutoCompleteAddress';
 import SmartSearch from './SmartSearch';
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
 const style = {
   position: 'absolute',
   top: '50%',
@@ -45,7 +50,13 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
   const [apartment, setApartment] = useState("")
   const [open, setOpen] = React.useState(false);
   const [locationValue, setLocationValue] = useState(true)
+<<<<<<< HEAD
   const [error, setError] = useState(false)
+=======
+  const [error,setError]=useState(false)
+
+
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
   console.log("page1 working")
   const handleRadioInput = (e) => {
     setRadio(e.target.value);
@@ -142,6 +153,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
       apartment
     }
     // handleNext();
+ 
     console.log("page1-data", data)
     localStorage.setItem("page1-data", JSON.stringify(data));
   }
@@ -171,7 +183,12 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                       <InputLabel id="demo-multiple-name-label"> select the city you want to shift </InputLabel>
                       <Select
                         onChange={(e) => {
+<<<<<<< HEAD
                           localStorage.setItem("statesName", JSON.stringify(e.target.value))
+=======
+                          localStorage.setItem("statesName",JSON.stringify(e.target.value))
+
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
                           const selectedCity = e.target.value;
                           setCity(selectedCity);
                         }}
@@ -185,6 +202,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                         <MenuItem value="COIMBATORE">COIMBATORE</MenuItem>
                       </Select>
                     </FormControl>
+                  
                   </div>
                   <br />
                   <div style={{ marginBottom: '15px', border: '1px solid grey' }}>
@@ -220,6 +238,10 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                   label=""
                   fullWidth
                   variant='outlined'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
                 /> :
                   //         <TextField 
                   //         id="search-bar"
@@ -247,16 +269,29 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
             </div>
             <br />
             <div>
+<<<<<<< HEAD
               {/* {city ? "" : alert("please select city")} */}
+=======
+            {/* {city ? "" : alert("please select city")} */}
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
                 /> :
+<<<<<<< HEAD
                   <SmartSearch handleSeacrYesNo={radioChange1}></SmartSearch>
+=======
+                <SmartSearch></SmartSearch>
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
                 // <TextField label="search" id="fullWidth" fullWidth
                 //   onChange={(e) => setApartment(e.target.value)}
                 // />
               }
+<<<<<<< HEAD
+=======
+
+              
+>>>>>>> 9ce1361726bdecc700e2c4e1e3cc8c481bcba391
             </div>
             <br />
             <div className='proceed-btn'>
