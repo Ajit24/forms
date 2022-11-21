@@ -3,9 +3,6 @@ import TextField from '@mui/material/TextField';
 var data = require("../data.json");
 var data2 = require("../db.json");
 
-
-
-
 const SmartSearch = () => {
   const [searITemss,setSearchItems] = useState([{full_name:""}])
   const [value, setValue] = useState("");
@@ -15,19 +12,7 @@ const SmartSearch = () => {
 
   console.log('data2[stateName]', data2[stateName]);
 
-    // const people = [
-    //     "bob",
-    //     "jen",
-    //     "dev",
-    //     "ajit",
-    //     "doe",
-    //     "shakti",
-    //     "akash",
-    //     "arpit",
-    // ]
-    
-    
- console.log("selected-city",stateName)
+    console.log("selected-city",stateName)
 
   const onChange = (event) => {
     setValue(event.target.value);

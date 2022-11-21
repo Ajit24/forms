@@ -34,7 +34,7 @@ const style = {
   height: '30%',
   p: 18,
 };
-const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
+const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
   const [name, setName] = useState("");
   const [accNumber, setAccNumber] = useState('')
   const [currentAddress, setCurrentAddress] = useState("")
@@ -46,6 +46,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
   const [open, setOpen] = React.useState(false);
   const [locationValue, setLocationValue] = useState(true)
   
+  
   const handleRadioInput = (e) => {
     setRadio(e.target.value);
   }
@@ -55,24 +56,20 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
   const [monkey, setMonkey] = useState(true)
 
   React.useEffect(()=>{
-
     setMonkey(false)
-
-
   },[city])
-  console.log("locationValue", locationValue)
+
+ // console.log("locationValue", locationValue)
   const handleaddress = (e) => {
     setLocationValue(false)
     let text = document.getElementById("location");
     text.value = "";
   }
   const radioChange1 = () => {
-
-    !city ? alert("pls slect city") : setMonkey(false)
-
+        !city ? alert("pls slect city") : setMonkey(false)
+     // setApartment(e.target.value)
   }
 
-  
   const radioChange2 = () => {
     setMonkey(true)
   }
@@ -220,13 +217,6 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
                   fullWidth
                   variant='outlined'
                 /> :
-                  //         <TextField 
-                  //         id="search-bar"
-                  //         label="Enter a city name"
-                  //         variant="outlined"
-                  //         placeholder="Search..."
-                  //         fullWidth
-                  //  />
                   <GoogleAutoCompleteAddress></GoogleAutoCompleteAddress>
               }
             </div>
@@ -246,15 +236,11 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup }) => {
             </div>
             <br />
             <div>
-              {/* {city ? "" : alert("please select city")} */}
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
                 /> :
                   <SmartSearch handleSeacrYesNo={radioChange1}></SmartSearch>
-                // <TextField label="search" id="fullWidth" fullWidth
-                //   onChange={(e) => setApartment(e.target.value)}
-                // />
               }
             </div>
             <br />
