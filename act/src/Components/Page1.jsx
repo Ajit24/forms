@@ -66,13 +66,16 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
     text.value = "";
   }
   const radioChange1 = () => {
+    
     setApartment(city)
-        !city ? alert("pls slect city") : setMonkey(false)
+        !city ? alert("please select your city") : setMonkey(false)
      // setApartment(e.target.value)
   }
 
   const radioChange2 = () => {
     setMonkey(true)
+
+
   }
   const handleLocation = (e) => {
     // setLocation(e.target.value);
@@ -272,7 +275,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
               <h5>city               : {city}</h5>
               <h5>building Name/D:No: {apartment} </h5>
               <h5>shifting address  :{shifting}</h5>
-              <h5>pincode           :{ }</h5>
+              {/* <h5>pincode           :{ }</h5> */}
             </Typography>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
               <button onClick={handleBackkk} style={{ backgroundColor: 'red', color: 'rgba(255,255,255,1)', width: '150px', height: '35px', fontWeight: '500px', fontSize: '15px', fontFamily: 'sans-serif', borderRadius: '10px' }}>CHNAGE</button>

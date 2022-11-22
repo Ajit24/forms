@@ -47,7 +47,7 @@ const SmartSearch = () => {
               const fullName = item.full_name.toLowerCase();
 
               return (
-                searchTerm &&
+                searchTerm && searchTerm.length > 3 &&
                 fullName.startsWith(searchTerm) &&
                 fullName !== searchTerm
               );
