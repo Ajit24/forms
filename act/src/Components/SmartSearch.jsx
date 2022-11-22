@@ -6,6 +6,8 @@ var data2 = require("../db.json");
 const SmartSearch = () => {
   const [searITemss,setSearchItems] = useState([{full_name:""}])
   const [value, setValue] = useState("");
+  const valueset = localStorage.setItem("valueset",value)
+
 
   // const [searITemss,setSearchItems] = useState([{full_name:""}])
   const stateName  = JSON.parse(localStorage.getItem("statesName"))
@@ -15,6 +17,7 @@ const SmartSearch = () => {
     console.log("selected-city",stateName)
 
   const onChange = (event) => {
+    // localStorage.setItem("search-location area", JSON.stringify(value))
     setValue(event.target.value);
   };
 

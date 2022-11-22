@@ -43,6 +43,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
   const [location, setLocation] = useState("")
   const [radio, setRadio] = useState('')
   const [apartment, setApartment] = useState("")
+  const [valuerun,setValueRun] = useState(true)
   const [open, setOpen] = React.useState(false);
   const [locationValue, setLocationValue] = useState(true)
   
@@ -52,6 +53,8 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
   }
   let data = JSON.parse(localStorage.getItem("page1-data")) || [];
   //let pincode = JSON.parse(localStorage.getItem("pincode")) || [];
+  let setvalue = (localStorage.getItem("valueset")) || [];
+
   let shifting = JSON.parse(localStorage.getItem("text")) || [];
   const [monkey, setMonkey] = useState(true)
 
@@ -66,14 +69,16 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
     text.value = "";
   }
   const radioChange1 = () => {
-    
+    setValueRun(false)
     setApartment(city)
         !city ? alert("please select your city") : setMonkey(false)
+        
      // setApartment(e.target.value)
   }
 
   const radioChange2 = () => {
     setMonkey(true)
+    setValueRun(true)
 
 
   }
@@ -94,8 +99,9 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
       console.log(pos);
       const lat = pos.coords.latitude;
       const lon = pos.coords.longitude;
-      const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude${lat}=&longitude=${lon}&localityLanguage=en`;
-      fetch(geoApiUrl)
+     const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude${lat}=&longitude=${lon}&localityLanguage=en`;
+     //const geoApiUrl   = `https://maps.googleapis.com/maps/api/js/GeocodeService.Search?latitude${lat}=&longitude=${lon}&localityLanguage=en`;
+     fetch(geoApiUrl)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -187,8 +193,9 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
                     </FormControl>
                   </div>
                   <br />
-                  <div style={{ marginBottom: '15px', border: '1px solid grey' }}>
-                    <LocalizationProvider dateAdapter={AdapterDayjs} >
+                
+                    {city !== "BANGALORE" ? <LocalizationProvider dateAdapter={AdapterDayjs} >
+                        <div style={{ marginBottom: '15px', border: '1px solid grey' }}>
                       <DatePicker
                         label="choose a date"
                         value={date}
@@ -197,8 +204,10 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
                         }}
                         renderInput={(params) => <TextField {...params} />}
                       />
-                    </LocalizationProvider>
-                  </div>
+                       </div>
+                    </LocalizationProvider> : ""}
+                    
+                 
                 </div>
               </div>
             </Box>
@@ -243,8 +252,10 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
                   onChange={(e) => setApartment(e.target.value)}
+                  
                 /> :
-                  <SmartSearch handleSeacrYesNo={radioChange1}></SmartSearch>
+                  <SmartSearch handleSeacrYesNo={""} onChange={(e) => setApartment(e.target.value)} ></SmartSearch>
+                  // <SmartSearch handleSeacrYesNo={radioChange1}></SmartSearch>
               }
             </div>
             <br />
@@ -273,8 +284,11 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
             </Typography>
             <Typography>
               <h5>city               : {city}</h5>
-              <h5>building Name/D:No: {apartment} </h5>
+              {
+                valuerun ?   <h5>building Name/D:No: {apartment} </h5> : <h5>building Name/D:No: {setvalue} </h5>
+              }              
               <h5>shifting address  :{shifting}</h5>
+
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
