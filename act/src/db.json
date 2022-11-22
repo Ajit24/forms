@@ -17,15 +17,23 @@
     ],
     "HYDERABAD": [
         
-        { "full_name": "hyderabad apartment" }
+        { "full_name": "hyderabad apartment" },
+        { "full_name": "hyderabad area-1" },
+            { "full_name": "sobha constrct" },
+            { "full_name": "star apartment " }
   
 
 ],
-"CHENNAI": [
+"NELLORE": [
         {"full_name": "Prestige Bella Vista"},
         {"full_name": "Prestige Downtown Apartment"},
         {"full_name": "West KK Nagar"},
         {"full_name": "Prestige Bella Vista"}
 
+],
+"COIMBATORE":[
+        {"full_name": "coimbatore area"},
+        {"full_name": "coimbatore area-1"},
+        {"full_name": "coimbatore area-2"}
 ]
 }
