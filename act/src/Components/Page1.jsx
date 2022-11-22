@@ -66,6 +66,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
     text.value = "";
   }
   const radioChange1 = () => {
+    setApartment(city)
         !city ? alert("pls slect city") : setMonkey(false)
      // setApartment(e.target.value)
   }
