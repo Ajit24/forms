@@ -208,10 +208,11 @@ const handleBackk = ()=>{
           <h5>user's account No: {data.accNumber}</h5>
           <h5>Current Address : {data.currentAddress}</h5>
           <h5>user's city : {data.city}</h5>
-          <h5>Date of Registration : {data.date}</h5>
+          {data.city !== "BANGALORE"? <h5>Date of Registration : {data.date}</h5>: ""}
+          {/* <h5>Date of Registration : {data.date}</h5> */}
           <h5>Multi Store Building : {data.radio}</h5>
           <h5>shifting address :{shifting}</h5>
-          <h5>pincode :{}</h5>
+          {/* <h5>pincode :{}</h5> */}
           <h5>Date of Appointment:{date.selectedDate}</h5>
         </Typography>
 
