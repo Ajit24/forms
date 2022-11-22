@@ -3,10 +3,10 @@
         
             { "full_name": "Prestige" },
             { "full_name": "golden height" },
-            { "full_name": "gh" },
-            { "full_name": "sobha" },
-            { "full_name": "star" },
-            { "full_name": "Prestige" },
+            { "full_name": "Prestige Ozone" },
+            { "full_name": "SOBHA" },
+            { "full_name": "PRESTIGE REGENT PLACE" },
+            { "full_name": "Prestige Casabella" },
             { "full_name": "golden height" },
             { "full_name": "gh" },
             { "full_name": "sobha" },
@@ -17,9 +17,15 @@
     ],
     "GUNTUR": [
         
-        { "full_name": "chennai" }
+        { "full_name": "guntur apartment" }
   
-      
+
+],
+"CHENNAI": [
+        {"full_name": "Prestige Bella Vista"},
+        {"full_name": "Prestige Downtown Apartment"},
+        {"full_name": "West KK Nagar"},
+        {"full_name": "Prestige Bella Vista"}
 
 ]
 }
