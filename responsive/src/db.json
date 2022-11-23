@@ -1,0 +1,39 @@
+{
+    "BANGALORE": [
+        
+            { "full_name": "Prestige" },
+            { "full_name": "golden height" },
+            { "full_name": "Prestige Ozone" },
+            { "full_name": "SOBHA" },
+            { "full_name": "PRESTIGE REGENT PLACE" },
+            { "full_name": "Prestige Casabella" },
+            { "full_name": "golden height" },
+            { "full_name": "gh" },
+            { "full_name": "sobha" },
+            { "full_name": "star" }
+
+          
+    
+    ],
+    "HYDERABAD": [
+        
+        { "full_name": "hyderabad apartment" },
+        { "full_name": "hyderabad area-1" },
+            { "full_name": "sobha constrct" },
+            { "full_name": "star apartment " }
+  
+
+],
+"NELLORE": [
+        {"full_name": "Prestige Bella Vista"},
+        {"full_name": "Prestige Downtown Apartment"},
+        {"full_name": "West KK Nagar"},
+        {"full_name": "Prestige Bella Vista"}
+
+],
+"COIMBATORE":[
+        {"full_name": "coimbatore area"},
+        {"full_name": "coimbatore area-1"},
+        {"full_name": "coimbatore area-2"}
+]
+}

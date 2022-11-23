@@ -6,9 +6,6 @@ import image4 from "../Image/image4.png"
 import image5 from "../Image/image5.png"
 
 
-
-
-
 const Footer = () => {
   return (
     <>

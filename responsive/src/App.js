@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import HorizontalLinearStepper from './Components/HorizontalLinearStepper';
+import HorizontalLinearStepper from './Components/HorizontalLinearStepper/HorizontalLinearStepper';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
