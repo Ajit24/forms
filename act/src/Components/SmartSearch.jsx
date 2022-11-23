@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import '../App.css';
 import TextField from '@mui/material/TextField';
 var data = require("../data.json");
 var data2 = require("../db.json");

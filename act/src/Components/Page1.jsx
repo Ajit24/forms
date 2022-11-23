@@ -167,7 +167,7 @@ const Page1 = ({ handleNext, handleBack, openPopup, setOpenPopup, value }) => {
               <div style={{ display: 'flex', border: '', width: '475px', marginLeft: "50px" }} className='right-div'>
                 <div>
                   <div style={{ marginBottom: '15px' }}>
-                    <TextField fullWidth label="Name" id="fullWidth" onChange={(e) => setName(e.target.value)}/></div>
+                    <TextField fullWidth label="Name" id="fullWidth" onChange={(e) => setName(e.target.value)} /></div>
                   <div style={{ marginBottom: '15px' }}>
                     <TextField fullWidth label="Acc No." id="fullWidth" onChange={(e) => setAccNumber(e.target.value)} /> </div>
                   <div style={{ marginBottom: '15px' }}>
