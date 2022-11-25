@@ -261,7 +261,7 @@ const Page1 = ({ handleNext, handleBack }) => {
         </div>
       </div>
       <div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <div className='modal'>
         <Modal

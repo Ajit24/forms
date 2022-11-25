@@ -1,5 +1,5 @@
 .page1-main{
-    /* border: 1px solid red; */
+    border: 1px solid red;
 display: flex;
 
 }
@@ -23,3 +23,29 @@ margin-left: 5%;
     width: 100%;
 }
 
+@media  only screen and (max-width:470px) {
+    .page1-main{
+        /* border: 1px solid red; */
+    display: flex;
+    
+    }
+    .right-content{
+        margin-left:8%;
+    }
+    .left-content{
+    margin-left: 5%;
+    }
+    .proceed-btn{
+        height: 45px;
+        width: 245px;
+        background-color: red;
+        /* color: black; */
+        color: white;
+        font-weight: 400px;
+        border-radius: 10px;
+    
+    }
+    .datePicker{
+        width: 100%;
+    }
+}
