@@ -19,7 +19,9 @@ import Footer from '../Footer/Footer';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import GoogleAutoCompleteAddress from '../GoogleAutoCompleteAddress/GoogleAutoCompleteAddress';
-import SmartSearch from '../SmartSearch/SmartSearch';
+import SmartSearch from '../SmartSearch/SmartSearch'
+import EdiText from 'react-editext'
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -134,6 +136,7 @@ const Page1 = ({ handleNext, handleBack }) => {
     setOpen(false)
     handleBack()
   }
+  
   const handleConfirm = (e) => {
     e.preventDefault();
     handleNext()
@@ -151,6 +154,11 @@ const Page1 = ({ handleNext, handleBack }) => {
     console.log("page1-data", data)
     localStorage.setItem("page1-data", JSON.stringify(data));
   }
+  
+  const handleSave = (val) => {
+    // console.log('Edited Value -> ', val)
+   }
+ 
   return (
     <>
       <div style={{ border: '1px solid black', borderRadius: '20px', textAlign: 'center', fontFamily: 'sans-serif', fontWeight: '500px', background: 'white' }}>
@@ -251,6 +259,7 @@ const Page1 = ({ handleNext, handleBack }) => {
                   // <SmartSearch handleSeacrYesNo={radioChange1}></SmartSearch>
               }
             </div>
+           
             <br />
             <div className='proceed-btn'>
               <Button onClick={handleProceed}>
@@ -278,9 +287,22 @@ const Page1 = ({ handleNext, handleBack }) => {
             <Typography>
               <h5>city               : {city}</h5>
               {
-                valuerun ?   <h5>building Name/D:No: {apartment} </h5> : <h5>building Name/D:No: {setvalue} </h5>
-              }              
-              <h5>shifting address  :{shifting}</h5>
+                valuerun ?   <h5>building Name/D:No: 
+                         <EdiText
+        type='text'
+        value={apartment}
+        onSave={handleSave}
+      />
+                  {} </h5> : <h5>building Name/D:No: {setvalue} </h5>
+              }      
+                  
+              <h5>shifting address  :
+              <EdiText
+        type='text'
+        value={shifting}
+        onSave={handleSave}
+      />
+                {}</h5>
 
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
