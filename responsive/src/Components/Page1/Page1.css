@@ -1,3 +1,10 @@
+.first-div{
+    border: 2px solid blueviolet;
+    text-align: center;
+    border-radius: 20px;
+font-family: sans-serif;
+font-weight: 500px;
+}
 .page1-main{
     border: 1px solid red;
 display: flex;
@@ -36,7 +43,8 @@ margin-left: 5%;
     
     }
     .right-content{
-        margin-left:8%;
+        margin-left:0%;
+
     }
     .left-content{
     /* margin-left: 5%; */

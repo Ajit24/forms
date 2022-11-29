@@ -63,7 +63,7 @@ export default function HorizontalLinearStepper() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep} className='stepper' style={{border:'', width:'',marginLeft:'',padding:'',}}>
+      <Stepper activeStep={activeStep} className='stepper'>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};

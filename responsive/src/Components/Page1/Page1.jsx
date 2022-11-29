@@ -162,15 +162,15 @@ const Page1 = ({ handleNext, handleBack }) => {
  
   return (
     <>
-      <div style={{ border: '1px solid black', borderRadius: '20px', textAlign: 'center', fontFamily: 'sans-serif', fontWeight: '500px', background: 'white' }}>
+      <div className='first-div'>
         <h2>Enter details for a quick feasibility</h2>
         <div className='page1-main'>
          <div className='left-content'>
                     <TextField className='Name' fullWidth label="Name" id="fullWidth" onChange={(e) => setName(e.target.value)} /> <br/>  <br/>
                   
-                    <TextField className='Name' fullWidth label="Acc No." id="fullWidth" onChange={(e) => setAccNumber(e.target.value)} />  <br/>  <br/>
+                    <TextField className='Acc' fullWidth label="Acc No." id="fullWidth" onChange={(e) => setAccNumber(e.target.value)} />  <br/>  <br/>
                   
-                    <TextField className='Name' fullWidth label="Current Address" id="fullWidth" onChange={(e) => setCurrentAddress(e.target.value)} />  <br/>  <br/>
+                    <TextField className='Current Address' fullWidth label="Current Address" id="fullWidth" onChange={(e) => setCurrentAddress(e.target.value)} />  <br/>  <br/>
                   
                     <FormControl className='city-option' sx={{ m: .3, }}>
                       <InputLabel id="demo-multiple-name-label"> select the city you want to shift </InputLabel>
@@ -220,13 +220,14 @@ const Page1 = ({ handleNext, handleBack }) => {
               aria-labelledby="demo-row-radio-buttons-group-label"
               name="row-radio-buttons-group"
             >
-              <FormControlLabel  className='radio' id="current-location" value=" current location" onChange={handleLocation} control={<Radio />} label="use current location" fullWidth />
-              <FormControlLabel  className='radio' id="enter-address" value="enter address" onChange={handleaddress} control={<Radio />} label="enter Address" />
+              <FormControlLabel  className='radio-1' id="current-location" value=" current location" onChange={handleLocation} control={<Radio />} label="use current location" fullWidth />
+              <FormControlLabel  className='radio-2' id="enter-address" value="enter address" onChange={handleaddress} control={<Radio />} label="enter Address" />
             </RadioGroup>
             <br /> 
           
               {
                 locationValue ? <TextField
+                className='address-input'
                   id="location"
                   label=""
                   fullWidth
@@ -237,16 +238,17 @@ const Page1 = ({ handleNext, handleBack }) => {
               <br/>
               <br/>
             <div>
-             <h3>Multi-Storey Building (4 or more floors)
+             <h3 className='floors'>Multi-Storey Building (4 or more floors)
              <RadioGroup
+
                   value={radio}
                   onChange={handleRadioInput}
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
                 >
-                  <FormControlLabel value="Yes" control={<Radio />} onChange={radioChange1} label="yes" />
-                  <FormControlLabel value="No" control={<Radio />} onChange={radioChange2} label="No" />
+                  <FormControlLabel className='radio-yes' value="Yes" control={<Radio />} onChange={radioChange1} label="yes" />
+                  <FormControlLabel className='radio-no' value="No" control={<Radio />} onChange={radioChange2} label="No" />
                 </RadioGroup> 
              </h3>
                
@@ -254,6 +256,7 @@ const Page1 = ({ handleNext, handleBack }) => {
             <div>
               {
                 (monkey) ? <TextField label="Apartment/building name/House no" id="fullWidth" fullWidth
+                className='Apartment-name'
                   onChange={(e) => setApartment(e.target.value)}
                   
                 /> :

@@ -13,7 +13,7 @@ function App() {
     backgroundPosition: 'center',height:'95%'}}>
       <Container>
       
-        <Box sx={{border:'2px solid black', bgcolor: 'white' }} style={{padding:"30px 30px 30px 40px", borderRadius:'60px', marginTop:'65px'}} >
+        <Box className='box'>
         
         <HorizontalLinearStepper/>
         </Box>
