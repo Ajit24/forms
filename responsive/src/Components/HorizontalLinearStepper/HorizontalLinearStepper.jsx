@@ -5,6 +5,7 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import '../HorizontalLinearStepper/HorizontalLinearStepper.css'
 import Page1 from '../Page1/Page1';
 import Page2 from '../Page2/Page2';
 import Page3 from '../Page3/Page3';
@@ -62,7 +63,7 @@ export default function HorizontalLinearStepper() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep} style={{border:'', width:'650px',marginLeft:'120px',padding:'20px 75px ',}}>
+      <Stepper activeStep={activeStep} className='stepper' style={{border:'', width:'',marginLeft:'',padding:'',}}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};

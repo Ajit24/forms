@@ -22,18 +22,28 @@ margin-left: 5%;
 .datePicker{
     width: 100%;
 }
+.city-option{
+    width: 470px;
+}
+.right-content{
+    border: 1px solid blue;
+}
 
-@media  only screen and (max-width:470px) {
+@media only screen and (min-width: 0px) and (max-width: 376px){
     .page1-main{
-        /* border: 1px solid red; */
-    display: flex;
+        border: 1px solid red;
+    /* display: flex; */
     
     }
     .right-content{
         margin-left:8%;
     }
     .left-content{
-    margin-left: 5%;
+    /* margin-left: 5%; */
+    width: 95%;
+    }
+    .city-option{
+        width: 250px;
     }
     .proceed-btn{
         height: 45px;
@@ -47,5 +57,14 @@ margin-left: 5%;
     }
     .datePicker{
         width: 100%;
+    
     }
+}
+
+@media only screen and (min-width: 377px) and (max-width: 768px){
+   
+}
+
+@media only screen and (min-width:769px) and (max-width:1024px){
+
 }

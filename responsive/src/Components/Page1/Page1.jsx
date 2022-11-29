@@ -32,7 +32,7 @@ const style = {
   border: '3px solid black',
   borderRadius: '35px',
   boxShadow: 24,
-  height: '30%',
+  height: '40%',
   p: 18,
 };
 const Page1 = ({ handleNext, handleBack }) => {
@@ -129,6 +129,7 @@ const Page1 = ({ handleNext, handleBack }) => {
   };
   const handleProceed = () => {
     setOpen(true);
+    
     // console.log("page1", data);
   }
   const handleClose = () => setOpen(false);
@@ -165,13 +166,13 @@ const Page1 = ({ handleNext, handleBack }) => {
         <h2>Enter details for a quick feasibility</h2>
         <div className='page1-main'>
          <div className='left-content'>
-                    <TextField fullWidth label="Name" id="fullWidth" onChange={(e) => setName(e.target.value)} /> <br/>  <br/>
+                    <TextField className='Name' fullWidth label="Name" id="fullWidth" onChange={(e) => setName(e.target.value)} /> <br/>  <br/>
                   
-                    <TextField fullWidth label="Acc No." id="fullWidth" onChange={(e) => setAccNumber(e.target.value)} />  <br/>  <br/>
+                    <TextField className='Name' fullWidth label="Acc No." id="fullWidth" onChange={(e) => setAccNumber(e.target.value)} />  <br/>  <br/>
                   
-                    <TextField fullWidth label="Current Address" id="fullWidth" onChange={(e) => setCurrentAddress(e.target.value)} />  <br/>  <br/>
+                    <TextField className='Name' fullWidth label="Current Address" id="fullWidth" onChange={(e) => setCurrentAddress(e.target.value)} />  <br/>  <br/>
                   
-                    <FormControl sx={{ m: .3, width: 470 }}>
+                    <FormControl className='city-option' sx={{ m: .3, }}>
                       <InputLabel id="demo-multiple-name-label"> select the city you want to shift </InputLabel>
                       <Select
                         onChange={(e) => {
@@ -214,12 +215,13 @@ const Page1 = ({ handleNext, handleBack }) => {
           {/*............... // right-side content ........................*/}
           <div className='right-content'>
             <RadioGroup
+           
               row
               aria-labelledby="demo-row-radio-buttons-group-label"
               name="row-radio-buttons-group"
             >
-              <FormControlLabel id="current-location" value=" current location" onChange={handleLocation} control={<Radio />} label="use current location" fullWidth />
-              <FormControlLabel id="enter-address" value="enter address" onChange={handleaddress} control={<Radio />} label="enter Address" />
+              <FormControlLabel  className='radio' id="current-location" value=" current location" onChange={handleLocation} control={<Radio />} label="use current location" fullWidth />
+              <FormControlLabel  className='radio' id="enter-address" value="enter address" onChange={handleaddress} control={<Radio />} label="enter Address" />
             </RadioGroup>
             <br /> 
           
