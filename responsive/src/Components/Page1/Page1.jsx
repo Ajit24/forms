@@ -29,11 +29,11 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 700,
   bgcolor: 'background.paper',
-  border: '3px solid black',
-  borderRadius: '35px',
+  // border: '3px solid black',
+  borderRadius: '55px',
   boxShadow: 24,
   height: '40%',
-  p: 18,
+  p: 16,
 };
 const Page1 = ({ handleNext, handleBack }) => {
   const [name, setName] = useState("");
@@ -292,22 +292,23 @@ const Page1 = ({ handleNext, handleBack }) => {
             <Typography>
               <h5>city               : {city}</h5>
               {
-                valuerun ?   <h5>building Name/D:No: 
+                valuerun && apartment ?   <h5>building Name/D:No: 
                          <EdiText
         type='text'
         value={apartment}
         onSave={handleSave}
       />
-                  {} </h5> : <h5>building Name/D:No: {setvalue} </h5>
+               </h5> : <h5>building Name/D:No: {setvalue} </h5>
               }      
-                  
+    
               <h5>shifting address  :
+                
               <EdiText
         type='text'
         value={shifting}
         onSave={handleSave}
       />
-                {}</h5>
+      </h5>
 
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
