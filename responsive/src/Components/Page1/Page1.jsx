@@ -285,12 +285,15 @@ const Page1 = ({ handleNext, handleBack }) => {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
+            <div>
+            <Typography id="modal-title" variant="h6" component="h2">
               <h5>Please confirm your address for <br />
                 Fibrenet installation.</h5> <hr />
             </Typography>
+            
             <Typography>
               <h5>city               : {city}</h5>
+             
               {
                 valuerun && apartment ?   <h5>building Name/D:No: 
                          <EdiText
@@ -313,9 +316,11 @@ const Page1 = ({ handleNext, handleBack }) => {
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
             <div className='modal-btn' >
-              <button  className='btn1' onClick={handleBackkk} >CHNAGE</button>
+            <button  className='btn1' onClick={handleBackkk} >CHNAGE</button>
               <button className='btn2' onClick={handleConfirm}>CONFIRM</button>
             </div>
+            </div>
+          
           </Box>
         </Modal>
       </div>

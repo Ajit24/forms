@@ -3,16 +3,18 @@ margin-top: 10px;
 display: flex;
 justify-content: space-evenly;
 height: 200px;
+/* flex-wrap: wrap; */
 
 }
 @media only screen and (min-width: 0px) and (max-width: 376px){
     .footer-main{
-        margin-top: 10px;
+        margin-top:20px;
         /* display: flex; */
         display: inline-flex;
-        justify-content: space-evenly;
-        height: 200px;
-        width: 100%;
+        /* justify-content: space-evenly; */
+        height: 80px;
+        width: auto;
+        margin-right: 50px;
         
         }
 }
