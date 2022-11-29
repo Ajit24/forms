@@ -1,12 +1,12 @@
 .first-div{
-    border: 2px solid blueviolet;
+    border: 1px solid black;
     text-align: center;
     border-radius: 20px;
 font-family: sans-serif;
 font-weight: 500px;
 }
 .page1-main{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 display: flex;
 
 }
@@ -33,15 +33,52 @@ margin-left: 5%;
     width: 470px;
 }
 .right-content{
-    border: 1px solid blue;
+    border: 1px solid transparent;
 }
 
+/* // -------------- page modal styles ------------------- */
+/* 
+.modal-box-typography{
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    height: 400px;
+    border-radius: 20px;
+    margin-left: 270px;
+    margin-top: 130px;
+    background-color: white;
+    text-decoration-color: black;
+} */
+/* .modal-heading{
+    text-align: center;
+    margin-bottom: 30px;
+} */
+.modal-btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn1{
+    background-color: red;
+    color: rgba(255,255,255,1);
+    width: 150px;
+    height: 35px;
+    font-weight: 500px;
+    font-size: 15px;
+    font-family: sans-serif;
+    border-radius: 10px;
+}
+.btn2{
+    background-color: red;
+    color: rgba(255,255,255,1);
+    width: 150px;
+    height: 35px;
+    font-weight: 500px;
+    font-size: 15px;
+    font-family: sans-serif;
+    border-radius: 10px;
+}
 @media only screen and (min-width: 0px) and (max-width: 376px){
-    .page1-main{
-        border: 1px solid red;
-    /* display: flex; */
-    
-    }
+   
     .right-content{
         margin-left:0%;
 

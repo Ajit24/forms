@@ -275,7 +275,7 @@ const Page1 = ({ handleNext, handleBack }) => {
         </div>
       </div>
       <div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
       <div className='modal'>
         <Modal
@@ -311,9 +311,9 @@ const Page1 = ({ handleNext, handleBack }) => {
 
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-              <button onClick={handleBackkk} style={{ backgroundColor: 'red', color: 'rgba(255,255,255,1)', width: '150px', height: '35px', fontWeight: '500px', fontSize: '15px', fontFamily: 'sans-serif', borderRadius: '10px' }}>CHNAGE</button>
-              <button onClick={handleConfirm} style={{ backgroundColor: 'red', color: 'rgba(255,255,255,1)', width: '150px', height: '35px', fontWeight: '500px', fontSize: '15px', fontFamily: 'sans-serif', borderRadius: '10px' }}>CONFIRM</button>
+            <div className='modal-btn' >
+              <button  className='btn1' onClick={handleBackkk} >CHNAGE</button>
+              <button className='btn2' onClick={handleConfirm}>CONFIRM</button>
             </div>
           </Box>
         </Modal>
