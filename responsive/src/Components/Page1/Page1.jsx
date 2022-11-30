@@ -272,11 +272,16 @@ const Page1 = ({ handleNext, handleBack }) => {
               </Button>
             </div>
             </div>
+            {/* <div className='proceed-btn'>
+              <Button onClick={handleProceed}>
+                PROCEED
+              </Button>
+            </div> */}
         </div>
       </div>
-      <div>
+      {/* <div>
         <Footer />
-      </div>
+      </div> */}
       <div className='modal'>
         <Modal
           open={open}
@@ -290,7 +295,7 @@ const Page1 = ({ handleNext, handleBack }) => {
               <h5>Please confirm your address for <br />
                 Fibrenet installation.</h5> <hr />
             </Typography>
-            
+
             <Typography>
               <h5>city               : {city}</h5>
              
