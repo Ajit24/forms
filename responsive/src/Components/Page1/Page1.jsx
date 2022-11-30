@@ -297,20 +297,20 @@ const Page1 = ({ handleNext, handleBack }) => {
             </Typography>
 
             <Typography>
-              <h5>city               : {city}</h5>
+              <h5>CITY               : {city}</h5>
              
               {
-                valuerun && apartment ?   <h5>building Name/D:No: 
+                valuerun && apartment ?   <h5>Building Name/D:No: 
                          <EdiText
                          className='edit-btn'
         type='text'
         value={apartment}
         onSave={handleSave}
       />
-               </h5> : <h5>building Name/D:No: {setvalue} </h5>
+               </h5> : <h5>Building Name/D:No: {setvalue} </h5>
               }      
     
-              <h5>shifting address  :
+              <h5>Shifting Address  :
                 
               <EdiText
               className='edit-btn'
@@ -323,7 +323,7 @@ const Page1 = ({ handleNext, handleBack }) => {
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
             <div className='modal-btn' >
-            <button  className='btn1' onClick={handleBackkk} >CHNAGE</button>
+            <button  className='btn1' onClick={handleBackkk} >CHANGE</button>
               <button className='btn2' onClick={handleConfirm}>CONFIRM</button>
             </div>
             </div>
