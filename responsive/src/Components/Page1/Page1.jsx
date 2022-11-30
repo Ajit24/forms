@@ -302,6 +302,7 @@ const Page1 = ({ handleNext, handleBack }) => {
               {
                 valuerun && apartment ?   <h5>building Name/D:No: 
                          <EdiText
+                         className='edit-btn'
         type='text'
         value={apartment}
         onSave={handleSave}
@@ -312,6 +313,7 @@ const Page1 = ({ handleNext, handleBack }) => {
               <h5>shifting address  :
                 
               <EdiText
+              className='edit-btn'
         type='text'
         value={shifting}
         onSave={handleSave}
