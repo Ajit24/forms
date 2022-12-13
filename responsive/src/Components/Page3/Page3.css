@@ -1,0 +1,48 @@
+.main-container{
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+}
+.box-main{
+    background-color: #cfe8fc;
+    height: 60vh;
+    border: 2px solid red;
+    padding: 20px 20px;
+    border-radius: 20px;
+
+}
+.scan-copy{
+    margin-top: 10px;
+}
+.p-ekyc{
+    margin-left: 40px;
+}
+.p-uoload{
+    margin-left: 40px;
+}
+
+/* //--------- media query --------------------------- */
+
+@media only screen and (min-width: 0px) and (max-width: 376px){
+
+    .box-main{
+        background-color: #cfe8fc;
+        height: 60vh;
+        border: 2px solid red;
+        padding: 20px 20px;
+        border-radius: 20px;
+    
+    }
+    .scan-copy{
+        margin-top: -35px;
+    }
+    .p-ekyc{
+        /* margin-left: 40px; */
+        margin-top: -10px;
+    }
+    .p-upload{
+        /* margin-left: 40px; */
+        margin-top: -21px;
+        margin-left: 25px;
+    }
+
+}

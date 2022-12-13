@@ -1,0 +1,69 @@
+.main-container{
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+}
+.box{
+    background-color: white;
+    height: 100vh;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    padding: 20px 20px;
+    align-items: center;
+}
+.first-div{
+    text-align: center;
+    font-weight: 50px;
+    color: gray;
+}
+/* .second-div-h4{
+    text-align: center;
+    font-weight: 50px;
+    color: gray;
+} */
+.form-choose-document{
+    width: 430px;
+}
+.div-img{
+    display: flex;
+    justify-content: space-evenly;
+}
+.div-upload{
+    display: flex;
+    height: 150px;
+    justify-content: space-evenly;
+    padding: 20px 20px 15px 15px;
+}
+.div-btn{
+display: flex;
+justify-content:center;
+gap: 50px;
+
+}
+.btn-back, btn-submit{
+background-color: red;
+color: rgba(255,255,255,1);
+height:35px ;
+width: 150px;
+font-weight: 400px;
+font-size: 15px;
+font-family:sans-serif ;
+border-radius: 10px;
+}
+.btn-submit{
+    background-color: red;
+color: rgba(255,255,255,1);
+height:35px ;
+width: 150px;
+font-weight: 400px;
+font-size: 15px;
+font-family:sans-serif ;
+border-radius: 10px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 376px){
+.form-choose-document{
+    width: 220px;
+   
+}
+
+}

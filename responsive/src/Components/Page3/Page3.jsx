@@ -1,5 +1,6 @@
 import { Container } from '@mui/system'
 import React from 'react'
+import '../Page3/Page3.css';
 import Box from '@mui/material/Box';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -25,9 +26,8 @@ const handleUpload = ()=>{
  
   return (
     <div>
-     <Container maxWidth="sm" style={{alignItems:'center', padding:'10px 10px 10px 10px'}}>
-        <Box sx={{ bgcolor: '#cfe8fc', height: '60vh' , border:'1px solid red',padding:'20px 20px', borderRadius:'20px'}}>
-          <div>
+     <Container  className='main-container' maxWidth="sm">
+        <Box  className='box-main'>
           <FormControl>
       <RadioGroup
 
@@ -38,18 +38,18 @@ const handleUpload = ()=>{
         <br/>
          
          <FormControlLabel value="eKYC" control={<Radio />} label={<h2>eKYC using Aadhar No</h2>} />
-         <p style={{marginLeft:'40px',}}>(Instant approval, faster processing)</p>
+         <p className='p-ekyc'>(Instant approval, faster processing)</p>
          
         <br/>
         <br/>
         <div>
-        <FormControlLabel onClick={handleUpload} value="upload" control={<Radio />} label={<h2>Upload a scanned copy of your documents</h2>} />
-        <p style={{marginLeft:'40px',}}>(48-72 hrs for document approval)</p>
+        <FormControlLabel className='scan-copy' onClick={handleUpload} value="upload" control={<Radio />} label={<h2 style={{}}>Upload a scanned copy of your documents</h2>} />
+        <p className='p-upload'>(48-72 hrs for document approval)</p>
 
         </div>
       </RadioGroup>
     </FormControl>
-          </div>
+          
         </Box>
       </Container>
     </div>

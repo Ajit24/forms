@@ -46,7 +46,7 @@ const Footer = () => {
 
 </p>
     </div>
-    <div className='image5'><img src={image5} alt="" />
+    {/* <div className='image5'><img src={image5} alt="" />
     <p>ET Certified
 </p>
     <p>Best Brand in
@@ -54,7 +54,7 @@ const Footer = () => {
 </p>
     <p>Broadband 2020-ET
 </p>
-    </div>
+    </div> */}
 
     </div>
     </>

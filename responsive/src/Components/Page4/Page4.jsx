@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 //import '../App.css'
+import '../Page4/Page4.css';
 import Box from '@mui/material/Box';
 import { Container } from '@mui/system'
 import InputLabel from '@mui/material/InputLabel';
@@ -72,17 +73,17 @@ const handleBackk = ()=>{
   return (
     <>
     <div>
-       <Container maxWidth="sm" style={{alignItems:'center', padding:'10px 10px 10px 10px',border:''}}>
-        <Box sx={{ bgcolor: 'white', height: '100vh' , border:'1px solid red', borderRadius:'20px',   padding:'20px 20px',alignItems:'center'}}>
+       <Container  className='main-container' maxWidth="sm" >
+        <Box className='box'>
 
-      <div style={{textAlign:'center',color:'gray',fontWeight:'50px'}}>
+      <div className='first-div'>
         <h3 >Please upload the documents</h3>
         <h5>Dear customer, as a TRAI mendate we would require a proof of address</h5>
         <h5>documents for the connection to be shifted</h5>
       </div>
-      <div className=''>
-      <FormControl sx={{ m: 2.5, width: 430 }} style={{border:''}}>
-      <InputLabel id="demo-simple-select-label">Choose Document type</InputLabel>
+      {/* <div className=''> */}
+      <FormControl className='form-choose-document' sx={{ m: 2.5, }}>
+      <InputLabel className='choose-document' id="demo-simple-select-label">Choose Document type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -101,7 +102,7 @@ const handleBackk = ()=>{
         </Select>
       </FormControl>
 
-      <div>
+      <div className='second-div'>
         <h4 style={{textAlign:'center',color:'gray', fontWeight:'50px'}}>
           Please upload a clear scanned copy of both front <br/>
          and back side of relevant document. In case the <br/>
@@ -109,11 +110,11 @@ const handleBackk = ()=>{
            may get delayed
         </h4>
         </div>
-        <div style={{display:'flex', justifyContent:'space-evenly'}}>
+        <div className='div-img'>
         <label htmlFor="">Front img</label>
         <label htmlFor="">Back img</label>
         </div>
-        <div style={{height:'150px', display:'flex', justifyContent:'space-evenly' ,padding:'20px 20px 15px 15px'}}>
+        <div className='div-upload'>
           
          <div className='image-upload' style={{border: '2px dashed grey', width:'110px', height:'90px',}}>
          <label for="file-input">
@@ -169,12 +170,12 @@ const handleBackk = ()=>{
          </div>
          
         </div>  <br/> <br/>
-        <div style={{display:'flex', justifyContent:'center', gap:'50px'}}>
-         <button   onClick={handleBackk} style={{backgroundColor:'red', color:'rgba(255,255,255,1)', width:'150px', height:'35px', fontWeight:'400px',fontSize:'15px',fontFamily:'sans-serif', borderRadius:'10px'}}>BACK</button>
+        <div className='div-btn'>
+         <button className='btn-back'  onClick={handleBackk}>BACK</button>
 
-         <button onClick={handleSubmit} style={{backgroundColor:'red', color:'rgba(255,255,255,1)', width:'150px', height:'35px', fontWeight:'500px',fontSize:'15px',fontFamily:'sans-serif', borderRadius:'10px'}}>SUBMIT</button>
+         <button className='btn-submit' onClick={handleSubmit}>SUBMIT</button>
          </div>
-      </div>
+      {/* </div> */}
      
         </Box>
       </Container>

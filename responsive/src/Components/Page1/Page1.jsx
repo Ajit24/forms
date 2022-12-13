@@ -22,19 +22,19 @@ import GoogleAutoCompleteAddress from '../GoogleAutoCompleteAddress/GoogleAutoCo
 import SmartSearch from '../SmartSearch/SmartSearch'
 import EdiText from 'react-editext'
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 700,
-  bgcolor: 'background.paper',
-  // border: '3px solid black',
-  borderRadius: '55px',
-  boxShadow: 24,
-  height: '40%',
-  p: 16,
-};
+// const style = {
+//   position: 'absolute',
+//   top: '50%',
+//   left: '50%',
+//   transform: 'translate(-50%, -50%)',
+//   width: 700,
+//   bgcolor: 'background.paper',
+//    border: '3px solid black',
+//   borderRadius: '55px',
+//   boxShadow: 24,
+//   height: '40%',
+//   p: 16,
+// };
 const Page1 = ({ handleNext, handleBack }) => {
   const [name, setName] = useState("");
   const [accNumber, setAccNumber] = useState('')
@@ -279,23 +279,25 @@ const Page1 = ({ handleNext, handleBack }) => {
             </div> */}
         </div>
       </div>
-      {/* <div>
+      <div>
         <Footer />
-      </div> */}
-      <div className='modal'>
+      </div>
+      <div >
         <Modal
+        className='modal'
           open={open}
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Box sx={style}>
-            <div>
+          <Box className='modal-box'>
+            
+            {/* <div> */}
             <Typography id="modal-title" variant="h6" component="h2">
-              <h5>Please confirm your address for <br />
+              <h5 style={{marginLeft:'10px'}}>Please confirm your address for <br />
                 Fibrenet installation.</h5> <hr />
             </Typography>
-
+           <div className='box-content'>
             <Typography>
               <h5>CITY               : {city}</h5>
              
@@ -322,11 +324,12 @@ const Page1 = ({ handleNext, handleBack }) => {
 
               {/* <h5>pincode           :{ }</h5> */}
             </Typography>
+            </div>
             <div className='modal-btn' >
             <button  className='btn1' onClick={handleBackkk} >CHANGE</button>
               <button className='btn2' onClick={handleConfirm}>CONFIRM</button>
             </div>
-            </div>
+            {/* </div> */}
           
           </Box>
         </Modal>
